@@ -1,0 +1,14 @@
+{{>layout/header}}
+<h1>{{nickname}}님의 윤리 여정 결과</h1>
+{{#histories}}
+    <div>
+        <h3>Day {{day}}: {{scenarioTitle}}</h3>
+        <p>선택: {{userChoice}}</p>
+        <p>나의 생각: {{reflection}}</p>
+    </div>
+{{/histories}}
+<div class="analysis">
+    <h3>AI 종합 분석</h3>
+    <p>{{analysis}}</p>
+</div>
+{{>layout/footer}}

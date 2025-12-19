@@ -1,0 +1,34 @@
+{{>layout/header}}
+
+<div class="container">
+    <h2>Day {{day}} : <span id="dilemmaTitle"></span></h2>
+    <p id="dilemmaDesc"></p>
+
+    <div class="row">
+        <button onclick="submitChoice('A')" class="btn btn-primary">선택 A</button>
+        <button onclick="submitChoice('B')" class="btn btn-success">선택 B</button>
+        <button onclick="submitChoice('C')" class="btn btn-warning">선택 C</button>
+    </div>
+</div>
+
+<script>
+    // 컨트롤러에서 넘겨준 JSON 데이터 파싱
+    const dilemmaData = {{dilemma}}; // Mustache 변수
+
+    document.getElementById('dilemmaTitle').innerText = dilemmaData.title;
+    document.getElementById('dilemmaDesc').innerText = dilemmaData.description;
+
+    function submitChoice(option) {
+        // REST API 호출 (AJAX)
+        fetch('/api/game/choice', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ choice: option })
+        }).then(response => {
+            alert('선택 완료! 다음 날로 넘어갑니다.');
+            window.location.reload();
+        });
+    }
+</script>
+
+{{>layout/footer}}

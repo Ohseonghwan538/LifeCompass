@@ -1,0 +1,41 @@
+{{>layout/header}}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Life Compass AI 회원가입</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/join" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">아이디 (학번)</label>
+                            <input type="text" name="username" class="form-control" placeholder="사용할 아이디를 입력하세요" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">비밀번호</label>
+                            <input type="password" name="password" class="form-control" placeholder="비밀번호를 입력하세요" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">닉네임</label>
+                            <input type="text" name="nickname" class="form-control" placeholder="표시될 이름을 입력하세요" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">나의 페르소나 (시나리오 기초)</label>
+                            <textarea name="persona" class="form-control" rows="3" placeholder="예: 20대 소프트웨어 전공 대학생, 취업과 도덕적 가치 사이에서 고민 중"></textarea>
+                            <div class="form-text">입력하신 페르소나를 바탕으로 AI가 맞춤형 딜레마를 생성합니다.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">가입하기</button>
+                    </form>
+                    <div class="mt-3 text-center">
+                        <a href="/login" class="text-secondary text-decoration-none">이미 계정이 있으신가요? 로그인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{>layout/footer}}

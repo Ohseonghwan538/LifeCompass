@@ -1,0 +1,35 @@
+{{>layout/header}}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white d-flex justify-content-between">
+                    <span>{{day}} / 3일차 기록</span>
+                    <span class="badge bg-light text-primary">{{nickname}}님의 성찰</span>
+                </div>
+                <div class="card-body p-4">
+                    <h2 class="card-title h4 mb-3">🤔 오늘의 선택을 되돌아보며</h2>
+                    <p class="text-muted mb-4">{{nickname}}님, 방금 내린 결정은 어떤 생각에서 비롯되었나요? 짧게 기록해 주세요.</p>
+
+                    <form action="/game/reflection" method="post">
+                        <div class="mb-4">
+                            <label for="reflectionText" class="form-label fw-bold">나의 회고 답변</label>
+                            <textarea id="reflectionText" name="reflection" class="form-control" rows="5"
+                                      placeholder="여기에 생각을 적어주세요..." required
+                                      style="resize: none;"></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                기록 저장하고 다음으로 이동
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{>layout/footer}}

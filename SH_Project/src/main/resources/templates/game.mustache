@@ -1,0 +1,36 @@
+{{>layout/header}}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white d-flex justify-content-between">
+                    <span>Day {{day}} / 3</span>
+                    <span class="badge bg-info">{{nickname}}님의 여정</span>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title mb-4">📍 {{scenario.title}}</h2>
+                    <p class="card-text fs-5" style="white-space: pre-wrap;">{{scenario.content}}</p>
+
+                    <hr class="my-4">
+
+                    <form action="/game/select" method="post">
+                        <div class="d-grid gap-3">
+                            <button type="submit" name="choice" value="A" class="btn btn-outline-primary text-start p-3">
+                                <strong>A.</strong> {{scenario.optionA}}
+                            </button>
+                            <button type="submit" name="choice" value="B" class="btn btn-outline-success text-start p-3">
+                                <strong>B.</strong> {{scenario.optionB}}
+                            </button>
+                            <button type="submit" name="choice" value="C" class="btn btn-outline-warning text-start p-3">
+                                <strong>C.</strong> {{scenario.optionC}}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{>layout/footer}}
